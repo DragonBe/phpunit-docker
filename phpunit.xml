@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    stopOnError="true"
+    stopOnFailure="true">
+
+    <testsuites>
+        <testsuite name="Project unit tests">
+            <directory suffix="php">tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix="php">src/</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="build/coverage" lowUpperBound="75" highLowerBound="95"/>
+        <log type="tap" target="build/logs/phpunit.tap"/>
+        <log type="testdox-text" target="build/logs/testdox.txt"/>
+    </logging>
+
+    <php>
+        <env name="FAKERCNT" value="500"/>
+    </php>
+
+</phpunit>

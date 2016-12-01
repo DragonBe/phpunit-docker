@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="PSR-2 Coding Standards">
+    <description>Adhering to the PSR-2 Coding Standards</description>
+    <file>src/</file>
+    <arg value="np"/>
+    <arg name="report" value="checkstyle"/>
+    <arg name="report-file" value="build/logs/checkstyle.xml"/>
+    <rule ref="PSR2"/>
+</ruleset>
