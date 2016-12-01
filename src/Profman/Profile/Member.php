@@ -70,15 +70,11 @@ class Member
     public function setFirstName(string $firstName): Member
     {
         if (array_key_exists('string', $this->validators)) {
-            throw new \InvalidArgumentException(
-                'We don\'t recognize your first name as a name, please check again.'
-            );
-        }
-
-        if (!$this->validators['string']->isValid(['string' => $firstName])) {
-            throw new \InvalidArgumentException(
-                'We don\'t recognize your first name as a name, please check again.'
-            );
+            if (!$this->validators['string']->isValid(['string' => $firstName])) {
+                throw new \InvalidArgumentException(
+                    'We don\'t recognize your first name as a name, please check again.'
+                );
+            }
         }
         $this->firstName = $firstName;
         return $this;
@@ -99,14 +95,11 @@ class Member
     public function setLastName(string $lastName): Member
     {
         if (array_key_exists('string', $this->validators)) {
-            throw new \InvalidArgumentException(
-                'We don\'t recognize your last name as a name, please check again.'
-            );
-        }
-        if (!$this->validators['string']->isValid(['string' => $lastName])) {
-            throw new \InvalidArgumentException(
-                'We don\'t recognize your last name as a name, please check again.'
-            );
+            if (!$this->validators['string']->isValid(['string' => $lastName])) {
+                throw new \InvalidArgumentException(
+                    'We don\'t recognize your last name as a name, please check again.'
+                );
+            }
         }
         $this->lastName = $lastName;
         return $this;
